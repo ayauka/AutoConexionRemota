@@ -3,3 +3,5 @@ ConexionRemota_*
 Conexiones/*
 Conexiones/Conexion_*
 
+# Inclusiones despues de la exclusion
+!Conexiones/Conexion_Muestra*.au3
