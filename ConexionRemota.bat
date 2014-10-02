@@ -1,20 +1,3 @@
-::******************************************************************** 
-::  Funcion:        Conectar remotamente de manera automatica con
-::                  la mayor resolucion posible a distintos 
-::                  servidores.
-::
-::  Autor:          Javier Andres Guerrero Hernandez [JAGH]
-::
-::  Cambios:        Javier Andres Guerrero Hernandez [JAGH]   
-::
-::  Versiones:      (2014/01/15) [JAGH]
-::                  Version inicial.
-::
-::  Contacto:       [JAGH]
-::                  jaguerrero@outlook.com
-::                  8111-222-514
-::********************************************************************
-
 @echo off
 :: Conexion remota a los distintos servidores
 setlocal
@@ -39,15 +22,15 @@ set /p opcion=Opcion Seleccionada:
 goto conexion%opcion%
 
 :conexion1
-Conexion_ServidorMuestra1.au3
+Conexiones\Conexion_ServidorMuestra1.au3
 goto final
 
 :conexion2
-Conexion_ServidorMuestra2.au3
+Conexiones\Conexion_ServidorMuestra2.au3
 goto final
 
 :conexion3
-Conexion_ServidorMuestra3.au3
+Conexiones\Conexion_ServidorMuestra3.au3
 goto final
 
 :final
