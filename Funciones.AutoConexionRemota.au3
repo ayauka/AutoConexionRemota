@@ -24,7 +24,7 @@ func AutoConexionRemota($equipo, $usuario, $password, $resolucion)
 
     ShellExecute($rutaDelPrograma)
 
-    WinWaitActive($ventanaPrincipal, "", 30)
+    WinWaitActive($ventanaPrincipal, "", 120)
     Sleep(500)
     WinActivate($ventanaPrincipal)
 
@@ -52,7 +52,19 @@ func AutoConexionRemota($equipo, $usuario, $password, $resolucion)
 
     Send($teclasParaConectar)
 
-    WinWaitActive($ventanaSeguridad, "", 120)
+    WinWaitActive($ventanaSeguridad, "", 180)
+    $dimensionesVentanaSeguridad = WinGetClientSize($ventanaSeguridad, "")
+    $altoDeVentanaSeguridad = $dimensionesVentanaSeguridad[1]
+    $alturaMinimaParaProceder = 300
+    $repeticionesMaximas = 60
+    $repeticionesDeRevision = 0
+
+    while ($altoDeVentanaSeguridad < $alturaMinimaParaProceder) and ($repeticionesDeRevision < $repeticionesMaximas)
+        $dimensionesVentanaSeguridad = WinGetClientSize($ventanaSeguridad, "")
+        $altoDeVentanaSeguridad = $dimensionesVentanaSeguridad[1]
+        Sleep(1000)
+
+    wend
     Sleep(500)
     WinActivate($ventanaSeguridad)
 
